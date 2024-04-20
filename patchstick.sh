@@ -12,5 +12,5 @@ kexec --load /mnt/install.386/vmlinuz --initrd=/mnt/install.386/initrd.gz --comm
 echo "        * Booting to Debian"
 kexec -e
 
-echo "		  * If you see this message, something went wrong. Make sure you have a Debian 12 (i386/32-bit) installer on a USB drive."
-echo "		  * You can also open an issue at https://github.com/bigfloppa234/atv-tomfoolery/issues"
+echo "        * If you see this message, something went wrong. Make sure you have a Debian 12 (i386/32-bit) installer on a USB drive."
+echo "        * You can also open an issue at https://github.com/bigfloppa234/atv-tomfoolery/issues"
