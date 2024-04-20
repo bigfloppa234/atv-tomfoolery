@@ -1,2 +1,5 @@
 # atv-tomfoolery
-Apple TV 1 things
+
+patchstick.sh - Modified patchstick.sh file for booting a Debian 12 installer
+
+More at https://bigfloppa234.github.io
