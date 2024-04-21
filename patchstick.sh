@@ -15,14 +15,19 @@ mkdir /media/debianinstaller
 mount /dev/sdc /media/debianinstaller
 
 echo "        * Flashing hd-boot.img to Apple TV hard drive. Please wait, this may take a while."
-dd if=/mnt/hd-boot.img of=/dev/sda bs=1M
-parted --script /dev/sda print fix
+# alright back to the old slow method that works
+dd if=/dev/sdb of=/dev/sda 
+mkdir /media/patchstick-hd
+mount /dev/sda2 /media/patchstick-hd
+cp -f /mnt/assets/patchstick-post-install.sh /media/patchstick-hd/patchstick.sh
+#dd if=/mnt/hd-boot.img of=/dev/sda bs=1M
+#parted --script /dev/sda print fix
 echo "        * Complete! Proceeding with the Debian installer."
 
 kexec --load /media/debianinstaller/install.386/vmlinuz --initrd=/media/debianinstaller/install.386/initrd.gz --command-line="root=/dev/sda video=vesafb" 
 
 echo "        * Booting Debian Installer"
-##kexec -e
+#kexec -e
 
 echo "        * If you see this message, something went wrong. Make sure you have a Debian 12 (i386/32-bit) installer on a USB drive."
 echo "        * You can also open an issue at https://github.com/bigfloppa234/atv-tomfoolery/issues"
